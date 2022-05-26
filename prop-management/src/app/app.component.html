@@ -1,5 +1,8 @@
 <button (click)="openDialog()" class="marginTop">Add a property</button>
 
+<div *ngIf="!properties.length" class="marginTop">
+  No properties found. Please Add propeties to continue
+</div>
 <div *ngIf="properties.length" class="marginTop">
   Your list of properties are : <br>
   <table>

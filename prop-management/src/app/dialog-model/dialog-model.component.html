@@ -26,7 +26,7 @@
         </mat-form-field>
     </form>
     <mat-dialog-actions align="center">
-        <button mat-button [disabled]="!nameFormControl || !descFormControl || !sizeFormControl" (click)="close(1)">Yes</button>
+        <button mat-button [disabled]="!nameFormControl.valid || !descFormControl.valid || !sizeFormControl.valid" (click)="close(1)">Yes</button>
         <button mat-button (click)="close(0)">No</button>
     </mat-dialog-actions>
 </div>
