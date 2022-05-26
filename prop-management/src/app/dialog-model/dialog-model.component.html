@@ -1,0 +1,32 @@
+<div>
+    <div mat-dialog-content>
+        Please enter the property details here
+    </div>
+    <form class="example-form">
+        <mat-form-field>
+            <mat-label>Property Name</mat-label>
+            <input type="text" matInput [formControl]="nameFormControl">
+            <mat-error *ngIf="!nameFormControl.valid">
+                Please Enter a valid property name
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Property Description</mat-label>
+            <input type="text" matInput [formControl]="descFormControl">
+            <mat-error *ngIf="!descFormControl.valid">
+                Please Enter a valid property description
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Property Size (in sq ft)</mat-label>
+            <input type="number" matInput [formControl]="sizeFormControl">
+            <mat-error *ngIf="!sizeFormControl.valid">
+                Please Enter a valid property size
+            </mat-error>
+        </mat-form-field>
+    </form>
+    <mat-dialog-actions align="center">
+        <button mat-button [disabled]="!nameFormControl || !descFormControl || !sizeFormControl" (click)="close(1)">Yes</button>
+        <button mat-button (click)="close(0)">No</button>
+    </mat-dialog-actions>
+</div>

@@ -1,0 +1,18 @@
+<button (click)="openDialog()" class="marginTop">Add a property</button>
+
+<div *ngIf="properties.length" class="marginTop">
+  Your list of properties are : <br>
+  <table>
+    <tr>
+      <th>Property Name</th>
+      <th>Description</th>
+      <th>Size</th>
+    </tr>
+    <tr *ngFor="let x of properties">
+      <td>{{ x.name }}</td>
+      <td>{{ x.desc }}</td>
+      <td>{{ x.size }}</td>
+    </tr>
+  </table>
+</div>
+<router-outlet></router-outlet>
